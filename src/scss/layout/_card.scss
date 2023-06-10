@@ -1,0 +1,15 @@
+.card {
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 15px 0 $blue, 0 1px 15px 0 $blue;
+    margin: 30px;
+
+    &_img {
+        width: 100%;
+    }
+
+    &_name {
+        font-size: 30px;
+    }
+}

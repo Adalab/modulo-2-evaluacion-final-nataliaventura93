@@ -1,0 +1,29 @@
+.form {
+    box-shadow: 0 1px 10px 0 black, 0 1px 3px 0 black; 
+    background-color: white;
+    height: 150px;
+    width: 80vw;
+    transform: translateX(100px) translateY(-40px);
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    &__input {
+        width: 200px;
+        height: 25px;
+        border: solid 2px blue;
+    }
+    &__search{
+        cursor: pointer;
+        width: 150px;
+        height: 40px;
+        color: white;
+        background-color: blue;
+        border-radius: 25px;
+        font-family: Dancing;
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,13 @@
+@import 'core/variables';
+@import 'core/reset';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+@font-face {
+    font-family: 'Dancing';
+    src: url('../fonts/DancingScript-VariableFont_wght.ttf');
+  }
+  :root {
+    font-family: Dancing;
+  }

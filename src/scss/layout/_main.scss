@@ -1,6 +1,6 @@
 .form {
     box-shadow: 0 1px 10px 0 black, 0 1px 3px 0 black; 
-    background-color: white;
+    background: linear-gradient($blue, white);
     height: 150px;
     width: 80vw;
     transform: translateX(100px) translateY(-40px);
@@ -10,20 +10,22 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    padding-top: 15px;
 
     &__input {
-        width: 200px;
+        width: 250px;
         height: 25px;
-        border: solid 2px blue;
+        border: solid 2px $pink;
     }
     &__search{
         cursor: pointer;
         width: 150px;
         height: 40px;
         color: white;
-        background-color: blue;
+        background-color: $pink;
         border-radius: 25px;
         font-family: Dancing;
         font-size: 25px;
+        border: solid 2px $pink;
     }
 }

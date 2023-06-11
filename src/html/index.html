@@ -4,22 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Disney characters</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/favicon-32x32.png" />
+    <link rel="icon" href="./assets/images/d.dedisney.png" />
   </head>
 
   <body>
-    <header class="header">
-    </header>
+    <header class="header"></header>
     <main>
       <form class="form">
-        <label class="form__label"for="characters">Search here for your disney character</label>
-        <input type="text" name="characters" id="characters" class="form__input" placeholder="Example: Olu Mel"/>
-        <input type="submit" class="form__search" value="Search"/>
+        <label class="form__label" for="characters"
+          >Search here for your disney character</label
+        >
+        <input
+          type="text"
+          name="characters"
+          id="characters"
+          class="form__input js_input"
+          placeholder="Example: Olu Mel"
+        />
+        <input type="submit" class="form__search js_btnSearch" value="Search" />
       </form>
       <ul>
-        <li class="card">
+        <h1 class="title_cards">Characters</h1>
+        <h2 class="hidden title_cards">Favorites</h2>
+        <li class="card js_card">
           <article>
             <img
               class="card_img"
@@ -28,12 +40,10 @@
             />
             <p class="card_name">Mickey</p>
           </article>
-          </li>
+        </li>
       </ul>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

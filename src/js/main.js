@@ -6,6 +6,7 @@ const btnSearch = document.querySelector('.js_btnSearch');
 
 const URL = 'https://dev.adalab.es/api/disney?pageSize=50';
 let cardList = [];
+let cardFavouriteList [];
 
 function renderCard(cardData) {
   const card = `<li class="card">

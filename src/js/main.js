@@ -1,9 +1,6 @@
 'use strict';
 
 let ulList = document.querySelector('.js_card_list');
-const input = document.querySelector('.js_input');
-const btnSearch = document.querySelector('.js_btnSearch');
-const titleFavorites = document.querySelector('.js_title_favorites');
 const ulFavorites = document.querySelector('.js_list_favorites');
 const URL = 'https://dev.adalab.es/api/disney?pageSize=50';
 let cardList = [];
@@ -65,6 +62,3 @@ function handleClickFavorites(event) {
   renderFavoriteList();
 }
 
-/*function removeCardFavorites(event) { Para cuando ponga la papelera en la tarjeta favorita
-    FavouriteCardList.splice(indexPalette)
-}*/

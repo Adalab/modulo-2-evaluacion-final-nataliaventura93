@@ -2,7 +2,7 @@
 
 let ulList = document.querySelector('.js_card_list');
 const ulFavorites = document.querySelector('.js_list_favorites');
-const URL = 'https://dev.adalab.es/api/disney?pageSize=50';
+const URL = 'https://api.disneyapi.dev/character';
 let cardList = [];
 let FavouriteCardList = [];
 

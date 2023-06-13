@@ -29,6 +29,20 @@ function renderCard(cardData) {
   return card;
 }
 
+function renderFavoriteCard(cardData) {
+  const card = `<li id="${cardData._id}" class="card js_li_card cardFavorite">
+        <article>
+          <img
+            class="card_img"
+            src="${cardData.imageUrl}"
+            alt="disney_character"
+          />
+          <p class="card_name">${cardData.name}</p>
+        </article>
+      </li>`;
+  return card;
+}
+
 function renderCardList(cardDataList) {
   ulList.innerHTML = '';
   for (const cardItem of cardDataList) {
@@ -43,10 +57,10 @@ function renderCardList(cardDataList) {
 function renderFavoriteList() {
   ulFavorites.innerHTML = '';
   let FavoritesLS = localStorage.getItem('ListFavorites');
-  if(FavoritesLS !== null){
+  if (FavoritesLS !== null) {
     FavouriteCardList = JSON.parse(FavoritesLS);
     for (const favorite of FavouriteCardList) {
-      ulFavorites.innerHTML += renderCard(favorite);
+      ulFavorites.innerHTML += renderFavoriteCard(favorite);
     }
   }
 }
@@ -61,4 +75,3 @@ function handleClickFavorites(event) {
   localStorage.setItem('ListFavorites', JSON.stringify(FavouriteCardList));
   renderFavoriteList();
 }
-

@@ -3,13 +3,23 @@
 let ulList = document.querySelector('.js_card_list');
 const input = document.querySelector('.js_input');
 const btnSearch = document.querySelector('.js_btnSearch');
-
+const titleFavorites = document.querySelector('.js_title_favorites');
+const ulFavorites = document.querySelector('.js_list_favorites');
 const URL = 'https://dev.adalab.es/api/disney?pageSize=50';
 let cardList = [];
-let cardFavouriteList [];
+let FavouriteCardList = [];
+
+fetch(URL)
+  .then((response) => response.json())
+  .then((data) => {
+    cardList = data.data;
+    renderCardList(cardList);
+  });
+
+renderFavoriteList();
 
 function renderCard(cardData) {
-  const card = `<li class="card">
+  const card = `<li id="${cardData._id}" class="card js_li_card">
       <article>
         <img
           class="card_img"
@@ -27,11 +37,34 @@ function renderCardList(cardDataList) {
   for (const cardItem of cardDataList) {
     ulList.innerHTML += renderCard(cardItem);
   }
+  const liList = document.querySelectorAll('.js_li_card');
+  for (const li of liList) {
+    li.addEventListener('click', handleClickFavorites);
+  }
 }
 
-fetch(URL)
-  .then((response) => response.json())
-  .then((data) => {
-    cardList = data.data;
-    renderCardList(cardList);
-  });
+function renderFavoriteList() {
+  ulFavorites.innerHTML = '';
+  let FavoritesLS = localStorage.getItem('ListFavorites');
+  if(FavoritesLS !== null){
+    FavouriteCardList = JSON.parse(FavoritesLS);
+    for (const favorite of FavouriteCardList) {
+      ulFavorites.innerHTML += renderCard(favorite);
+    }
+  }
+}
+function handleClickFavorites(event) {
+  const id = Number(event.currentTarget.id);
+  let selectedFavoriteCard = cardList.find((card) => card._id === id);
+  const indexCard = FavouriteCardList.findIndex((card) => card._id === id);
+
+  if (indexCard === -1) {
+    FavouriteCardList.push(selectedFavoriteCard);
+  }
+  localStorage.setItem('ListFavorites', JSON.stringify(FavouriteCardList));
+  renderFavoriteList();
+}
+
+/*function removeCardFavorites(event) { Para cuando ponga la papelera en la tarjeta favorita
+    FavouriteCardList.splice(indexPalette)
+}*/

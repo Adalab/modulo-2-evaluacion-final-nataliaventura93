@@ -1,7 +1,26 @@
+.main_section{
+    display: flex;
+    width: 100vw;
+}
+
+.section_characters {
+    width: 80%;
+}
+
+.section_favorites {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardFavorite {
+    box-shadow: 0 2px 15px 0 $pink, 0 1px 15px 0 $pink;
+    color: $blue;
+}
 .card_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: center;
 }
 
 .card {
@@ -10,6 +29,7 @@
     text-align: center;
     box-shadow: 0 2px 15px 0 $blue, 0 1px 15px 0 $blue;
     margin: 30px;
+    cursor: pointer;
 
     &_img {
         width: 100%;
@@ -18,7 +38,7 @@
 
     &_name {
         margin-top: 6px;
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 

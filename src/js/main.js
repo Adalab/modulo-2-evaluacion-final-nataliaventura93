@@ -2,9 +2,10 @@
 
 let ulList = document.querySelector('.js_card_list');
 const ulFavorites = document.querySelector('.js_list_favorites');
-const URL = 'https://api.disneyapi.dev/character';
+const URL = 'https://dev.adalab.es/api/disney?pageSize=50';
 let cardList = [];
 let FavouriteCardList = [];
+const buttonLOG = document.querySelector('.js_btnLOG');
 
 fetch(URL)
   .then((response) => response.json())
@@ -15,6 +16,14 @@ fetch(URL)
 
 renderFavoriteList();
 
+buttonLOG.addEventListener('click', handlerClickLOG);
+
+function handlerClickLOG() {
+  for (const favorite of FavouriteCardList) {
+    console.log(favorite.name);
+  }
+}
+
 function renderCard(cardData) {
   const card = `<li id="${cardData._id}" class="card js_li_card">
       <article>
@@ -24,6 +33,7 @@ function renderCard(cardData) {
           alt="disney_character"
         />
         <p class="card_name">${cardData.name}</p>
+        <a href="${cardData.sourceUrl}">Link<a/>
       </article>
     </li>`;
   return card;
@@ -38,6 +48,7 @@ function renderFavoriteCard(cardData) {
             alt="disney_character"
           />
           <p class="card_name">${cardData.name}</p>
+          <a href="${cardData.sourceUrl}">Link<a/>
         </article>
       </li>`;
   return card;
